@@ -1,0 +1,18 @@
+.f-perfil{
+  width: 100px;
+  height: 100px;
+  margin-top: -30px;
+}
+
+.datos-personales-column1{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn{
+margin:5px;
+}
+
+i{
+  margin-left: 10px;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Persona } from 'src/app/modelos/persona';
 import { PersonaService } from 'src/app/servicios/persona/persona.service';
 
@@ -9,6 +9,7 @@ import { PersonaService } from 'src/app/servicios/persona/persona.service';
 })
 export class DataPersonalComponent implements OnInit {
   personas: Persona[] = [];
+  @Output() infoPersona = new EventEmitter<Persona>();
 
   constructor(private personaService: PersonaService) {}
 
@@ -16,5 +17,9 @@ export class DataPersonalComponent implements OnInit {
     this.personaService.traerListaPersona().subscribe((personas) => {
       this.personas = personas;
     });
+  }
+
+  enviarInfoPersona(persona: Persona) {
+    this.infoPersona.emit(persona);
   }
 }

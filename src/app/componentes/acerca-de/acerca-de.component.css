@@ -1,0 +1,9 @@
+.container-100{
+  flex-direction:row;
+  justify-content: space-between;
+  
+}
+
+i{
+  margin: 15px;
+}
