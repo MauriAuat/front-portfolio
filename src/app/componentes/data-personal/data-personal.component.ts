@@ -8,17 +8,31 @@ import { PersonaService } from 'src/app/servicios/persona/persona.service';
   styleUrls: ['./data-personal.component.css'],
 })
 export class DataPersonalComponent implements OnInit {
-  personas: Persona[] = [];
+  persona: Persona = {
+    id_pers: 0,
+    nombre: '',
+    apellido: '',
+    titulo: '',
+    resumen: '',
+    foto: '',
+    bannerPersonal: '',
+  };
+  toogle: boolean = false;
   @Output() infoPersona = new EventEmitter<Persona>();
 
   constructor(private personaService: PersonaService) {}
 
   ngOnInit(): void {
-    this.personaService.traerListaPersona().subscribe((personas) => {
-      this.personas = personas;
+    this.personaService.traerPersona(1).subscribe((persona) => {
+      this.persona = persona;
     });
   }
-
+  editar() {
+    this.toogle = !this.toogle;
+    /*  this.personaService.actualizarPersona(this.persona).subscribe((persona) => {
+      this.persona = persona;
+    });*/
+  }
   enviarInfoPersona(persona: Persona) {
     this.infoPersona.emit(persona);
   }

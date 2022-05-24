@@ -5,6 +5,7 @@ export class Persona {
   titulo: string;
   resumen: string;
   foto: string;
+  bannerPersonal: string;
 
   constructor(
     id_pers: number,
@@ -12,7 +13,8 @@ export class Persona {
     apellido: string,
     titulo: string,
     resumen: string,
-    foto: string
+    foto: string,
+    bannerPersonal: string
   ) {
     this.id_pers = id_pers;
     this.nombre = nombre;
@@ -20,5 +22,6 @@ export class Persona {
     this.titulo = titulo;
     this.resumen = resumen;
     this.foto = foto;
+    this.bannerPersonal = bannerPersonal;
   }
 }

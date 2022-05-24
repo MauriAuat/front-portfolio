@@ -12,8 +12,10 @@ import { EducacionComponent } from './componentes/educacion/educacion.component'
 import { TecnologiaComponent } from './componentes/tecnologia/tecnologia.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 
+import { CookieService } from 'ngx-cookie-service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,10 @@ import { FormsModule } from '@angular/forms';
     EducacionComponent,
     TecnologiaComponent,
     ProyectosComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
