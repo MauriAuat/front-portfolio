@@ -23,7 +23,14 @@ export class HeaderComponent implements OnInit {
     proyectos: [],
     tecnologias: [],
   };
+
+  toogle: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}
+
+  onClick() {
+    this.toogle = !this.toogle;
+    console.log(this.toogle);
+  }
 }
