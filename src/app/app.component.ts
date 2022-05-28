@@ -36,4 +36,9 @@ export class AppComponent implements OnInit {
       this.persona = persona;
     });
   }
+
+  toogleChange() {
+    this.toogle = !this.toogle;
+    console.log('hola');
+  }
 }

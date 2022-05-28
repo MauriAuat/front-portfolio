@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from 'src/app/servicios/usuario/usuario.service';
 
@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   loginError: string = '';
 
+  @Output() close = new EventEmitter();
   constructor(
     private router: Router,
     private loginService: UsuarioService,
@@ -30,5 +31,8 @@ export class LoginComponent implements OnInit {
         this.loginService;
       }
     });
+  }
+  clickClose() {
+    this.close.emit();
   }
 }

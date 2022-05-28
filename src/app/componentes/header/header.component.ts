@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Persona } from 'src/app/modelos/persona';
 
 @Component({
@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
     tecnologias: [],
   };
 
+  @Output() btnToogle = new EventEmitter();
   toogle: boolean = false;
   constructor() {}
 
@@ -31,6 +32,7 @@ export class HeaderComponent implements OnInit {
 
   onClick() {
     this.toogle = !this.toogle;
+    this.btnToogle.emit();
     console.log(this.toogle);
   }
 }

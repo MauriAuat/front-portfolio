@@ -1,0 +1,25 @@
+
+
+form{
+  display:flex;
+  flex-direction:column;
+  box-sizing: border-box;
+  width:auto
+}
+input{
+  padding: 10px 0px;
+  margin: 0 10px;
+  width: 80%;
+  justify-self: center;
+}
+i{
+  align-self: flex-end;
+  color:red;
+  cursor:pointer;
+}
+i:hover{
+ padding: 0;
+ -webkit-box-shadow: -1px 2px 10px 10px rgba(255,15,15,0.5); 
+ box-shadow: -1px 2px 10px 10px rgba(255,15,15,0.5);
+
+}

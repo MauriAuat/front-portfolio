@@ -1,0 +1,17 @@
+.modal-container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+app-modal{
+  position: sticky;
+  top: 20px;
+  z-index: 1;
+}
+
+.toogleOn{
+ background-color: rgb(10, 16, 20);
+  opacity: 0.9;
+}

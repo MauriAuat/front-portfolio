@@ -1,7 +1,16 @@
-<app-header [persona]="persona"></app-header>
-<app-acerca-de ></app-acerca-de>
-<app-experiencia></app-experiencia>
-<app-educacion></app-educacion>
-<app-tecnologia></app-tecnologia>
-<app-proyectos></app-proyectos>
-<app-footer></app-footer>
+<div class="container-fluid" [ngClass]="{toogleOn:toogle}">
+  <div class="modal-content" *ngIf="toogle" >
+    <app-modal (close)="toogleChange()">
+    </app-modal>
+  </div>
+  <div class="app-container" [ngClass]="{toogleOn:toogle}">
+    <app-header [persona]="persona" (btnToogle)="toogleChange()"></app-header>
+    <app-acerca-de ></app-acerca-de>
+    <app-experiencia></app-experiencia>
+    <app-educacion></app-educacion>
+    <app-tecnologia></app-tecnologia>
+    <app-proyectos></app-proyectos>
+    <app-footer></app-footer>
+  </div>
+</div>
+
