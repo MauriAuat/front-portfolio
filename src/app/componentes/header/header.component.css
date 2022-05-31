@@ -1,6 +1,9 @@
 
+
 .container-100{
   box-sizing: content-box;
+  margin-top:0;
+  padding:0;
 } 
 .navbar{
   padding:0;
@@ -33,5 +36,11 @@ button{
 
 i:hover{
   box-shadow: 0 0 15px #ddd;
+}
+#logo{
+  width: 235px;
+  height: 74px;
+  position: absolute;
+  top: 141px;
 }
 

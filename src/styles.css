@@ -21,3 +21,12 @@ i{
   flex-direction: column;
  
 }
+
+.componente{
+  border:transparent;
+  box-shadow: 3px 10px 5px 0px rgba(79,78,78,0.75);
+-webkit-box-shadow: 3px 10px 5px 0px rgba(79,78,78,0.75);
+-moz-box-shadow: 3px 10px 5px 0px rgba(79,78,78,0.75);
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+}

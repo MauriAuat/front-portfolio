@@ -1,8 +1,8 @@
-<div class="container-fluid" [ngClass]="{toogleOn:toogle}">
-  <div class="modal-content" *ngIf="toogle" >
-    <app-modal (close)="toogleChange()">
+<div class="container-fluid" >
+ 
+    <app-modal (close)="toogleChange()" *ngIf="toogle">
     </app-modal>
-  </div>
+  
   <div class="app-container" [ngClass]="{toogleOn:toogle}">
     <app-header [persona]="persona" (btnToogle)="toogleChange()"></app-header>
     <app-acerca-de ></app-acerca-de>

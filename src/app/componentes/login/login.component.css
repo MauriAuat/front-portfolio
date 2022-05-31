@@ -1,4 +1,7 @@
-
+label{
+  color: #fff;
+  margin-left:10px;
+}
 
 form{
   display:flex;
