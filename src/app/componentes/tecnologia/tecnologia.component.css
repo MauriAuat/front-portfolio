@@ -147,6 +147,7 @@ i{
 .container-tecnology{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .tecnologia-container--icon{
