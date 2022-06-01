@@ -4,17 +4,21 @@
    <i class="fa-solid fa-plus fa-lg"></i>
  </div>
   
-  <div class="container-proyecto">
+  <div class="container-proyecto" *ngFor="let person of persona.proyectos; index as i">
     <div class="proyecto-container--text">
-    <h5><a href="">
-      Nombre del proyecto
-    </a> </h5>
-    <p>descripcion del proyecto</p>
-    <span>fecha de inicio</span> <span> - fecha finalizacion</span>
+      <hr>
+      <h5>
+        <a [href]="person.link_proyecto">
+          {{person.nombre_proyecto}}
+        </a> 
+      </h5>
+      <p>{{person.descripcion}}</p>
+      <span>Fecha activo: {{person.fecha_activo}}</span>
     </div>
     <div class="container--icon">
       <i class="fa-solid fa-pen-to-square fa-lg"></i>
       <i class="fa-solid fa-trash-can fa-lg"></i> 
+    </div>
   </div>
-  </div>
+  <hr>
 </div>

@@ -3,17 +3,19 @@
     <h4>Experiencia</h4>
     <i class="fa-solid fa-plus fa-lg"></i>
   </div>
-  <div class="experiencia-container">
+  <div class="experiencia-container" *ngFor="let person of persona.exp_laboral; index as i">
     <div class="experiencia-container--text">
-      <img src="" alt="Logo de empresa">
-      <h5>Nombre cargo</h5>
-      <p>nombre empresa</p>
-      <span>fecha inicio</span><span>fecha finalizacion</span>
-      <p>descripcion: Lugar</p>
+      <hr>
+      <img [src]="person.logo_Empresa" id="logo" alt="Logo de empresa">
+      <h5>{{person.empresa}}</h5>
+      <h5>{{person.cargo}}</h5>
+      <span>{{person.fecha_inicio}}</span><span> - {{person.fecha_fin}}</span>
+      <p>{{person.descripcion}}</p>
+      <hr>
     </div>
     <div class="container--icon">
       <i class="fa-solid fa-pen-to-square fa-lg"></i>
-      <i class="fa-solid fa-trash-can fa-lg"></i> 
+      <i class="fa-solid fa-trash-can fa-lg" ></i> 
     </div>
   </div>
 </div>

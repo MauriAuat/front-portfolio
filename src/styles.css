@@ -30,3 +30,15 @@ i{
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
 }
+
+.fa-trash-can{
+  color:red;
+}
+
+.fa-pen-to-square{
+  color: grey;
+}
+
+.fa-plus{
+  color: green;
+}

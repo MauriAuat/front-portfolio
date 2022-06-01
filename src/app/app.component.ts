@@ -39,6 +39,5 @@ export class AppComponent implements OnInit {
 
   toogleChange() {
     this.toogle = !this.toogle;
-    console.log('hola');
   }
 }

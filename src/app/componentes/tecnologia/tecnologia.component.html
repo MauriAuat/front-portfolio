@@ -5,140 +5,21 @@
       </div>
   
 <div class="container">
-    <div class="container-tecnology">
-        <p>Nombre tecnologia</p>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="progress blue">
-                    <span class="progress-left">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <span class="progress-right">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <div class="progress-value">90%</div>
-                </div>
-            </div>
-          </div>
-          <div class="tecnologia-container--icon">
-              <i class="fa-solid fa-pen-to-square fa-lg"></i>
-              <i class="fa-solid fa-trash-can fa-lg"></i> 
-          </div>
-    </div>
-    <div class="container-tecnology">
-        <p>Nombre tecnologia</p>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="progress blue">
-                    <span class="progress-left">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <span class="progress-right">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <div class="progress-value">90%</div>
-                </div>
-            </div>
-          </div>
-          <div class="tecnologia-container--icon">
-              <i class="fa-solid fa-pen-to-square fa-lg"></i>
-              <i class="fa-solid fa-trash-can fa-lg"></i> 
-          </div>
-    </div>
-    <div class="container-tecnology">
-        <p>Nombre tecnologia</p>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="progress blue">
-                    <span class="progress-left">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <span class="progress-right">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <div class="progress-value">90%</div>
-                </div>
-            </div>
-          </div>
-          <div class="tecnologia-container--icon">
-              <i class="fa-solid fa-pen-to-square fa-lg"></i>
-              <i class="fa-solid fa-trash-can fa-lg"></i> 
-          </div>
-    </div>
-    <div class="container-tecnology">
-        <p>Nombre tecnologia</p>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="progress blue">
-                    <span class="progress-left">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <span class="progress-right">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <div class="progress-value">90%</div>
-                </div>
-            </div>
-          </div>
-          <div class="tecnologia-container--icon">
-              <i class="fa-solid fa-pen-to-square fa-lg"></i>
-              <i class="fa-solid fa-trash-can fa-lg"></i> 
-          </div>
-    </div>
-    <div class="container-tecnology">
-        <p>Nombre tecnologia</p>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="progress blue">
-                    <span class="progress-left">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <span class="progress-right">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <div class="progress-value">90%</div>
-                </div>
-            </div>
-          </div>
-          <div class="tecnologia-container--icon">
-              <i class="fa-solid fa-pen-to-square fa-lg"></i>
-              <i class="fa-solid fa-trash-can fa-lg"></i> 
-          </div>
-    </div>
-    <div class="container-tecnology">
-        <p>Nombre tecnologia</p>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="progress blue">
-                    <span class="progress-left">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <span class="progress-right">
-                        <span class="progress-bar"></span>
-                    </span>
-                    <div class="progress-value">90%</div>
-                </div>
-            </div>
-          </div>
-          <div class="tecnologia-container--icon">
-              <i class="fa-solid fa-pen-to-square fa-lg"></i>
-              <i class="fa-solid fa-trash-can fa-lg"></i> 
-          </div>
-    </div>
- 
-    <div class="container-tecnology">
-        <p>Nombre tecnologia</p>
+
+    <div class="container-tecnology" *ngFor="let person of persona.tecnologias; index as i">
+        
        <circle-progress
-       [subtitle]="'HTML'"
+       [subtitle]="person.nombre_tecno"
        [space]="10"
-       [percent]="45"
+       [percent]="person.nivel"
        [radius]="100"
        [outerStrokeWidth]="16"
        [innerStrokeWidth]="8"
-       [outerStrokeColor]="colorArray[0]"
-       [innerStrokeColor]="'#C7E596'"
+       [outerStrokeColor]="colorArray[i]"
+       [innerStrokeColor]="'#00AA96'"
        [animation]="true"
        [animationDuration]="300"
+       [subtitleFontSize]="'30'"
        ></circle-progress>
           <div class="tecnologia-container--icon">
               <i class="fa-solid fa-pen-to-square fa-lg"></i>

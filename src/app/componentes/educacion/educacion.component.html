@@ -3,12 +3,14 @@
     <h4>Educacion</h4>
     <i class="fa-solid fa-plus fa-lg"></i>
   </div>
-  <div class="educacion-container">
+  <div class="educacion-container" *ngFor="let person of persona.edus; index as i">
     <div class="educacion-container--text">
-      <img src="" alt="Logo institucion educativa">
-      <h5>Nombre institucion</h5>
-      <p>titulo</p>
-      <span>fecha inicio -</span><span> fecha finalizacion</span>
+      <hr>
+      <img [src]="person.logo_inst" id="logo" alt="Logo institucion educativa">
+      <h5>{{person.nombre_inst}}</h5>
+      <p>{{person.titulo}}</p>
+      <span>{{person.fecha_ingreso}} -</span><span> {{person.fecha_egreso}}</span>
+      <hr>
     </div>
     <div class="container--icon">
       <i class="fa-solid fa-pen-to-square fa-lg"></i>

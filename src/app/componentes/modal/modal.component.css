@@ -9,4 +9,5 @@
   background-color: rgb(63, 61, 61);
   border-radius: 5px;
   transition: all 250ms ease-out;
+  box-shadow: 3px 10px 5px 5px rgba(163, 161, 161, 0.75);
 }
