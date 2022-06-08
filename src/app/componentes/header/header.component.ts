@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
     tecnologias: [],
   };
 
+  color: string = '';
   @Output() btnToogle = new EventEmitter();
   toogle: boolean = false;
   constructor() {}

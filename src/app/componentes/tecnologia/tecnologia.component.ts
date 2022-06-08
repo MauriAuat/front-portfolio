@@ -24,6 +24,7 @@ export class TecnologiaComponent implements OnInit {
     tecnologias: [],
   };
   colorArray: string[] = [
+    '#232c2e',
     '#FF6633',
     '#FFB333',
     '#FF33FF',

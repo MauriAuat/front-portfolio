@@ -1,7 +1,18 @@
 <div class="container-100 border border-3 componente">
   <div class="inner-container">   
     <h4>Acerca De</h4>
-    <p>{{persona.resumen}}</p>
+    <p *ngIf="!edit">{{persona.resumen}}</p>
+    <div class="edit-container" *ngIf="edit">
+      <form #f="ngForm" (ngSubmit)="editarResumen()" novalidated >
+        <textarea 
+          cols="70" 
+          rows="8" 
+          [(ngModel)]="persona.resumen" 
+          [ngModelOptions]="{standalone: true}"> {{persona.resumen}}
+        </textarea>
+        <button class="btn btn-primary">Editar</button>
+      </form>
+    </div>
   </div>
-  <i class="fa-solid fa-pen-to-square fa-lg"></i>
+  <i class="fa-solid fa-pen-to-square fa-lg" *ngIf="ulogged" (click)="onEdit()" ></i>
 </div>

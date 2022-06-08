@@ -1,6 +1,8 @@
 <div class="container-100 border border-3" [ngClass]="{'first': toogle}">
-  <nav class="navbar navbar-dark rounded-3">
+  <nav class="navbar navbar-dark rounded-3" [ngStyle]="{'background-color': color}">
     <span class="nombre">Mauricio Auat</span>
+    <input type="color" name="" id="" [value]="color" [(ngModel)]="color">
+    <span>{{color}}</span>
     <div class="icons">
       <a href="#">
         <i class="fa-brands fa-linkedin-in fa-2x icon-linkedin" >
@@ -14,7 +16,7 @@
 
   </nav>
   <img id="logo" src="https://i.gyazo.com/a4d513ed8779973ce9f4bb6616f19a05.png" alt="arg prog">
-  <img class="banner-header" src="https://cutewallpaper.org/21/hd-banner-background/HD-background-images-for-banner-hd-Background-Images-Hd-.jpg" alt="fondo-header" >
+  <img class="banner-header" [src]="persona.bannerPersonal" alt="fondo-header" >
   <app-data-personal style="height:80%;" [persona]="persona"></app-data-personal>
   
 </div>

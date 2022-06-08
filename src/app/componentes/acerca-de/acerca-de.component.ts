@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Persona } from 'src/app/modelos/persona';
+import { PersonaService } from 'src/app/servicios/persona/persona.service';
+import { UsuarioService } from 'src/app/servicios/usuario/usuario.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -23,7 +25,28 @@ export class AcercaDeComponent implements OnInit {
     proyectos: [],
     tecnologias: [],
   };
-  constructor() {}
 
-  ngOnInit(): void {}
+  edit: boolean = false;
+  ulogged: string = '';
+
+  constructor(
+    private personaService: PersonaService,
+    private loginService: UsuarioService
+  ) {}
+
+  ngOnInit(): void {
+    this.ulogged = this.loginService.getLoggedUser();
+    console.log(this.ulogged);
+  }
+
+  onEdit(): void {
+    this.edit = !this.edit;
+  }
+
+  editarResumen() {
+    this.edit = !this.edit;
+    this.personaService.actualizarPersona(this.persona).subscribe((persona) => {
+      persona = persona;
+    });
+  }
 }
