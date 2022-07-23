@@ -19,6 +19,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { ModalComponent } from './componentes/modal/modal.component';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { BodyComponent } from './componentes/body/body.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     ProyectosComponent,
     FooterComponent,
     ModalComponent,
+    BodyComponent,
   ],
   imports: [
     BrowserModule,
