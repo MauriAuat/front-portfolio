@@ -30,12 +30,7 @@ export class AppComponent implements OnInit {
 
   constructor(private personaService: PersonaService) {}
 
-  ngOnInit(): void {
-    this.personaService.traerPersona(1).subscribe((persona) => {
-      console.log(persona.doms);
-      this.persona = persona;
-    });
-  }
+  ngOnInit(): void {}
 
   toogleChange() {
     this.toogle = !this.toogle;

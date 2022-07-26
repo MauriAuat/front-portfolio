@@ -37,6 +37,10 @@ export class AcercaDeComponent implements OnInit {
   ngOnInit(): void {
     this.ulogged = this.loginService.getLoggedUser();
     console.log(this.ulogged);
+    this.personaService.traerPersona(1).subscribe((persona) => {
+      this.persona = persona;
+      console.log('hola');
+    });
   }
 
   onEdit(): void {

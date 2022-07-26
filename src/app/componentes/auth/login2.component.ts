@@ -25,9 +25,11 @@ export class Login2Component implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.tokenService.getToken()) this.isLogged = true;
-    this.isLoginFail = false;
-    this.roles = this.tokenService.getAuthorities();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
   onLogin(): void {
@@ -41,12 +43,12 @@ export class Login2Component implements OnInit {
         this.tokenService.setUserName(data.nombreUsuario);
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
-        this.router.navigate(['/']);
+        window.location.reload();
       },
       (err) => {
         this.isLogged = false;
         this.isLoginFail = true;
-        this.errMsj = err.error.mensaje;
+        this.errMsj = err.error.message;
         console.log(this.errMsj + 'hola');
       }
     );

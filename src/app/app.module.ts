@@ -20,6 +20,10 @@ import { ModalComponent } from './componentes/modal/modal.component';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { BodyComponent } from './componentes/body/body.component';
+import { RegistroComponent } from './componentes/auth/registro.component';
+import { Login2Component } from './componentes/auth/login2.component';
+import { MenuComponent } from './componentes/menu/menu.component';
+import { interceptorProvider } from './interceptors/persona-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,12 +39,16 @@ import { BodyComponent } from './componentes/body/body.component';
     FooterComponent,
     ModalComponent,
     BodyComponent,
+    Login2Component,
+    RegistroComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+
     NgCircleProgressModule.forRoot({
       // set defaults here
       radius: 100,
@@ -51,7 +59,8 @@ import { BodyComponent } from './componentes/body/body.component';
       animationDuration: 300,
     }),
   ],
-  providers: [CookieService],
+  exports: [FormsModule],
+  providers: [CookieService, interceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

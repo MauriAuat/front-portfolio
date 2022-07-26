@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/modelos/persona';
 import { PersonaService } from 'src/app/servicios/persona/persona.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-body',
@@ -28,14 +29,32 @@ export class BodyComponent implements OnInit {
   };
   toogle: boolean = false;
   log: boolean = false;
-
-  constructor(private personaService: PersonaService) {}
+  roles: string[] = [];
+  isAdmin: boolean = false;
+  isLogged = false;
+  constructor(
+    private personaService: PersonaService,
+    private tokenService: TokenService
+  ) {}
 
   ngOnInit(): void {
-    this.personaService.traerPersona(1).subscribe((persona) => {
-      console.log(persona.doms);
-      this.persona = persona;
-    });
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+      this.roles = this.tokenService.getAuthorities();
+      this.roles.forEach((rol) => {
+        if (rol === 'ROLE_ADMIN') {
+          this.isAdmin = true;
+          console.log(this.tokenService.getUserName());
+        }
+      });
+      const id = 1;
+      this.personaService.traerPersona(id).subscribe((persona) => {
+        console.log('hola');
+        this.persona = persona;
+      });
+    } else {
+      this.isLogged = false;
+    }
   }
 
   toogleChange() {
