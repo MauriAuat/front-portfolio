@@ -11,27 +11,28 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class BodyComponent implements OnInit {
   title = 'porftolioTF';
 
-  persona: Persona = {
-    id_pers: 0,
-    nombre: '',
-    apellido: '',
-    titulo: '',
-    resumen: '',
-    foto: '',
-    bannerPersonal: '',
-    redSocial1: '',
-    redSocial2: '',
-    doms: [],
-    edus: [],
-    exp_laboral: [],
-    proyectos: [],
-    tecnologias: [],
-  };
+  persona: Persona = new Persona(
+    0,
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    [],
+    [],
+    [],
+    [],
+    []
+  );
   toogle: boolean = false;
   log: boolean = false;
   roles: string[] = [];
   isAdmin: boolean = false;
   isLogged = false;
+  nombreUsuario: string = '';
   constructor(
     private personaService: PersonaService,
     private tokenService: TokenService
@@ -40,20 +41,22 @@ export class BodyComponent implements OnInit {
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
       this.isLogged = true;
+      this.nombreUsuario = this.tokenService.getUserName()!;
       this.roles = this.tokenService.getAuthorities();
       this.roles.forEach((rol) => {
         if (rol === 'ROLE_ADMIN') {
           this.isAdmin = true;
-          console.log(this.tokenService.getUserName());
+          //console.log(this.tokenService.getUserName());
         }
       });
       const id = 1;
-      this.personaService.traerPersona(id).subscribe((persona) => {
+      this.personaService.traerPersona(id).subscribe((data) => {
         console.log('hola');
-        this.persona = persona;
+        this.persona = data;
       });
     } else {
       this.isLogged = false;
+      this.nombreUsuario = '';
     }
   }
 

@@ -22,7 +22,7 @@ export class PersonaInterceptorService implements HttpInterceptor {
     const token = this.tokenService.getToken();
     if (token != null) {
       intReq = req.clone({
-        headers: req.headers.set('Autorization', 'Bearer ' + token),
+        headers: req.headers.set('Authorization', 'Bearer ' + token),
       });
     }
     return next.handle(intReq);
