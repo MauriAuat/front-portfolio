@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root',
 })
 export class UsuarioService {
-  usuarioURL: string = 'http://localhost:8080/api/usuario';
+  usuarioURL: string = 'https://porfolio-back-end.herokuapp.com/api/usuario';
 
   constructor(private http: HttpClient, private cookies: CookieService) {}
 

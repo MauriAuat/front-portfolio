@@ -7,7 +7,7 @@ import { Domicilio } from 'src/app/modelos/domicilio';
   providedIn: 'root',
 })
 export class DomicilioService {
-  domicilioURL: string = 'http://localhost:8080/api/dom';
+  domicilioURL: string = 'https://porfolio-back-end.herokuapp.com/api/dom';
 
   constructor(private http: HttpClient) {}
 

@@ -7,7 +7,7 @@ import { Tecnologia } from 'src/app/modelos/tecnologia';
   providedIn: 'root',
 })
 export class TecnologiasService {
-  tecnologiaURL: string = 'http://localhost:8080/api/tecno';
+  tecnologiaURL: string = 'https://porfolio-back-end.herokuapp.com/api/tecno';
 
   constructor(private http: HttpClient) {}
 
