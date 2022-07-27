@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<form (ngSubmit)="onCreate()" novalidated #f="ngForm">
+    <div class="header-form">
+        <h5>Crear Nueva Educación</h5>
+    </div>
+  <div class="form-group">
+      <label for="nombre_inst" class="form-label">Nombre de Institucion</label>
+      <input type="text" class="form-control" id="nombre_inst" name="nombre_inst" [(ngModel)]="nombre_inst" required>
+  </div>
+  <div class="form-group">
+      <label for="titulo" class="form-label">Titulo</label>
+      <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>
+  </div>
+  <div class="form-group">
+      <label for="logo_inst" class="form-label">Logo de la Institucion</label>
+      <input type="text" class="form-control" id="logo_inst" name="logo_inst" [(ngModel)]="logo_inst"
+          required>
+  </div>
+  <div class="form-group">
+      <label for="fecha_ingreso" class="form-label">Fecha de ingreso</label>
+      <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso" [(ngModel)]="fecha_ingreso"
+          required>
+  </div>
+  <div class="form-group">
+      <label for="fecha_egreso" class="form-label">Fecha de Egreso</label>
+      <input type="date" class="form-control" id="fecha_egreso" name="fecha_egreso" [(ngModel)]="fecha_egreso" required>
+  </div>
+  <button class="btn btn-success btn-block" [disabled]="!f.valid">Agregar</button>
+  <button class="btn btn-secondary btn-block" routerLink="/">Volver</button>
+</form>

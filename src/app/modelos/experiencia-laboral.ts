@@ -1,3 +1,5 @@
+import { Persona } from './persona';
+
 export class ExperienciaLaboral {
   id_exp: number;
   cargo: string;
@@ -6,7 +8,7 @@ export class ExperienciaLaboral {
   fecha_inicio: string;
   fecha_fin: string;
   descripcion: string;
-  id_pers: number;
+  persona: Persona;
 
   constructor(
     id_exp: number,
@@ -16,7 +18,7 @@ export class ExperienciaLaboral {
     fecha_inicio: string,
     fecha_fin: string,
     descripcion: string,
-    id_pers: number
+    persona: Persona
   ) {
     this.id_exp = id_exp;
     this.cargo = cargo;
@@ -25,6 +27,6 @@ export class ExperienciaLaboral {
     this.fecha_inicio = fecha_inicio;
     this.fecha_fin = fecha_fin;
     this.descripcion = descripcion;
-    this.id_pers = id_pers;
+    this.persona = persona;
   }
 }

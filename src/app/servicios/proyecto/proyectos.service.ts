@@ -7,7 +7,7 @@ import { Proyecto } from 'src/app/modelos/proyecto';
   providedIn: 'root',
 })
 export class ProyectosService {
-  proyectoURL: string = 'http://localhost:8080/api/dom';
+  proyectoURL: string = 'http://localhost:8080/api/project';
   constructor(private http: HttpClient) {}
 
   public traerListaProyectos(): Observable<Proyecto[]> {

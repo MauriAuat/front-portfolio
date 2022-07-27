@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
     proyectos: [],
     tecnologias: [],
   };
-
+  @Input() permis: boolean = false;
   color: string = '';
   @Output() btnToogle = new EventEmitter();
   toogle: boolean = false;

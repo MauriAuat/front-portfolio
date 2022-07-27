@@ -2,3 +2,18 @@
   padding:0;
   background-color: #288ed6;
 }
+
+h2{
+ font-weight:bold;
+ padding: 10px;
+ padding-left: 25px;
+ color: #fff;
+}
+
+.fa-brands:hover{
+  color: #fff;
+}
+
+.icon-linkedin,.icon-github{
+  color:black
+}

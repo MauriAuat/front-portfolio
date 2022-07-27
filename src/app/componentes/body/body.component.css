@@ -1,0 +1,23 @@
+.ulogged{
+  display:flex;
+}
+
+.welcome{
+  background-color: #288ed6;
+  width: 70%;
+  height: auto;
+  border-radius: 25px;
+  padding: 35px;
+  -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 9px -1px 29px 8px rgba(232,232,232,0); 
+box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 9px -1px 29px 8px rgba(232,232,232,0);
+  
+}
+
+.welcome>h3,h5{
+  color:#d5d9da;
+  font-weight: bold;
+}
+
+.welcome>h5{
+  margin-bottom:20px;
+}

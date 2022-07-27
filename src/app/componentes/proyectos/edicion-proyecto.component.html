@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+<form (ngSubmit)="onEdit()" novalidated #f="ngForm">
+    <div class="header-form">
+        <h5>Editar Proyecto</h5>
+    </div>
+    <div class="form-group">
+    
+      <label for="nombre_proyecto" class="form-label">Nombre proyecto</label>
+      <input type="text" class="form-control" id="nombre_proyecto" name="nombre_proyecto" [(ngModel)]="proyecto.nombre_proyecto" required>
+  </div>
+  <div class="form-group">
+      <label for="link_proyecto" class="form-label">Enlace</label>
+      <input type="text" class="form-control" id="link_proyecto" name="link_proyecto" [(ngModel)]="proyecto.link_proyecto" required>
+  </div>
+  <div class="form-group">
+      <label for="imagen_muestra" class="form-label">Imagen de muestra</label>
+      <input type="text" class="form-control" id="imagen_muestra" name="imagen_muestra" [(ngModel)]="proyecto.imagen_muestra"
+          required>
+  </div>
+  <div class="form-group">
+      <label for="fecha_activo" class="form-label">Fecha Activo</label>
+      <input type="date" class="form-control" id="fecha_activo" name="fecha_activo" [(ngModel)]="proyecto.fecha_activo"
+          required>
+  </div>
+  <div class="form-group">
+      <label for="descripcion" class="form-label">Descripcion</label>
+      <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="proyecto.descripcion" required>
+  </div>
+  <button class="btn btn-success btn-block" [disabled]="!f.valid">Agregar</button>
+  <button class="btn btn-secondary btn-block" routerLink="/">Volver</button>
+</form>

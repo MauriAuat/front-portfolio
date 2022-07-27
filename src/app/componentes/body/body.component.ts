@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/modelos/persona';
 import { PersonaService } from 'src/app/servicios/persona/persona.service';
 import { TokenService } from 'src/app/servicios/token.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-body',
@@ -27,7 +28,6 @@ export class BodyComponent implements OnInit {
     [],
     []
   );
-  toogle: boolean = false;
   log: boolean = false;
   roles: string[] = [];
   isAdmin: boolean = false;
@@ -46,29 +46,30 @@ export class BodyComponent implements OnInit {
       this.roles.forEach((rol) => {
         if (rol === 'ROLE_ADMIN') {
           this.isAdmin = true;
-          //console.log(this.tokenService.getUserName());
         }
       });
       const id = 1;
-      this.personaService.traerPersona(id).subscribe((data) => {
-        console.log('hola');
-        this.persona = data;
-      });
+      this.personaService.traerPersona(id).subscribe(
+        (data) => {
+          this.persona = data;
+        },
+        (err) => {
+          Swal.fire({
+            text: 'Error al cargar datos!',
+            icon: 'error',
+            iconColor: '#ddd',
+            position: 'top',
+            background: '#c43725',
+            color: '#ddd',
+            width: 400,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      );
     } else {
       this.isLogged = false;
       this.nombreUsuario = '';
     }
-  }
-
-  toogleChange() {
-    this.toogle = !this.toogle;
-  }
-
-  loginOff() {
-    if (this.log) this.log = !this.log;
-  }
-
-  loginOn() {
-    if (!this.log) this.log = !this.log;
   }
 }

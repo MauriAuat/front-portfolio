@@ -1,7 +1,7 @@
-<div class="container-100 border border-3 componente">
+<div class="container-100 border border-3 p-3 componente">
  <div class="encabezado">
    <h4>Proyectos</h4>
-   <i class="fa-solid fa-plus fa-lg"></i>
+   <i class="fa-solid fa-plus fa-lg" *ngIf="permis"  routerLink="/new-proyect"></i>
  </div>
   
   <div class="container-proyecto" *ngFor="let person of persona.proyectos; index as i">
@@ -15,9 +15,9 @@
       <p>{{person.descripcion}}</p>
       <span>Fecha activo: {{person.fecha_activo}}</span>
     </div>
-    <div class="container--icon">
-      <i class="fa-solid fa-pen-to-square fa-lg"></i>
-      <i class="fa-solid fa-trash-can fa-lg"></i> 
+    <div class="container--icon" *ngIf="permis">
+      <i class="fa-solid fa-pen-to-square fa-lg" routerLink="/edit-pro/{{person.id_proyecto}}"></i>
+      <i class="fa-solid fa-trash-can fa-lg" (click)="onDelete(person.id_proyecto,i)"></i> 
     </div>
   </div>
   <hr>

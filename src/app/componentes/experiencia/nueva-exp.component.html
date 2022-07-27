@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+<form (ngSubmit)="onCreate()" novalidated #f="ngForm">
+    <div class="header-form">
+        <h5>Crear Nueva Experiencia</h5>
+    </div>
+    <div class="form-group">
+        <label for="cargo" class="form-label">Cargo</label>
+        <input type="text" class="form-control" id="cargo" name="cargo" [(ngModel)]="cargo" required>
+    </div>
+    <div class="form-group">
+        <label for="empresa" class="form-label">Empresa</label>
+        <input type="text" class="form-control" id="empresa" name="empresa" [(ngModel)]="empresa" required>
+    </div>
+    <div class="form-group">
+        <label for="logo_Empresa" class="form-label">Logo de la Empresa</label>
+        <input type="text" class="form-control" id="logo_Empresa" name="logo_Empresa" [(ngModel)]="logo_Empresa"
+            required>
+    </div>
+    <div class="form-group">
+        <label for="fecha_inicio" class="form-label">Fecha de Inicio</label>
+        <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" [(ngModel)]="fecha_inicio"
+            required>
+    </div>
+    <div class="form-group">
+        <label for="fecha_fin" class="form-label">Fecha de Finalizacion</label>
+        <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" [(ngModel)]="fecha_fin" required>
+    </div>
+    <div class="form-group">
+        <label for="descripcion" class="form-label">Descripcion</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required>
+    </div>
+    <button class="btn btn-success btn-block" [disabled]="!f.valid">Agregar</button>
+    <button class="btn btn-secondary btn-block" routerLink="/">Volver</button>
+</form>

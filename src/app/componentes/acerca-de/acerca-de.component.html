@@ -1,4 +1,4 @@
-<div class="container-100 border border-3 componente">
+<div class="container-100 border border-3 p-3 componente">
   <div class="inner-container">   
     <h4>Acerca De</h4>
     <p *ngIf="!edit">{{persona.resumen}}</p>
@@ -11,8 +11,10 @@
           [ngModelOptions]="{standalone: true}"> {{persona.resumen}}
         </textarea>
         <button class="btn btn-primary">Editar</button>
+        <button class="btn btn-secondary btn-block" (click)="onEdit()">Volver</button>
+
       </form>
     </div>
   </div>
-  <i class="fa-solid fa-pen-to-square fa-lg" *ngIf="ulogged" (click)="onEdit()" ></i>
+  <i class="fa-solid fa-pen-to-square fa-lg" *ngIf="permis" (click)="onEdit()" ></i>
 </div>

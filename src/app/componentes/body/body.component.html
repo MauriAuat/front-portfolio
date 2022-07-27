@@ -1,39 +1,42 @@
-<app-menu></app-menu>
 <div class="container-fluid" >
+  <app-menu  [persona]="persona"></app-menu>
  
-  <app-login 
-    (close)="toogleChange()" 
-    *ngIf="toogle"
-    (uloggin)="loginOff()" 
-    (loggin)="loginOn()"
-  >
-  </app-login>
+  <div class="ulogged"  *ngIf="!isLogged">
+    <div class="container-md welcome">
+      <h3>Bienvenido a la incipiente red social para profesionales del Mundo de IT</h3>
+      <h5>Sumate a los miles de usuarios que se están interconectando con otros profesional dentro de este entorno virtual pensado para potenciar tu exposicion en el mercado laboral...</h5>
+      <app-registro></app-registro>
+    </div>
+  </div>
+  <div class="app-container" *ngIf="isLogged" >
+    <app-header 
+    [persona]="persona"
+    [permis]="isAdmin" 
+  ></app-header>
+    <app-acerca-de 
+    [persona]="persona"
+    [permis]="isAdmin"
+    ></app-acerca-de>
+    <app-experiencia 
+    [persona]="persona"
+    [permis]="isAdmin"
+    ></app-experiencia>
+    <app-educacion 
+    [persona]="persona"
+    [permis]="isAdmin"
+    ></app-educacion>
+    <app-tecnologia 
+    [persona]="persona"
+    [permis]="isAdmin"
+    ></app-tecnologia>
+    <app-proyectos 
+    [persona]="persona"
+    [permis]="isAdmin"
+    ></app-proyectos>
+    <app-footer
+    [persona]="persona"
+    [permis]="isAdmin"
+    ></app-footer>
+  </div>
 
-<div class="app-container" [ngClass]="{toogleOn:toogle}">
-  <app-header 
-  [persona]="persona" 
-  
-  (btnToogle)="toogleChange()"></app-header>
-  <app-acerca-de 
-  [persona]="persona"
-  
-  ></app-acerca-de>
-  <app-experiencia 
-  [persona]="persona"
-  
-  ></app-experiencia>
-  <app-educacion 
-  [persona]="persona"
-  
-  ></app-educacion>
-  <app-tecnologia 
-  [persona]="persona"
-  
-  ></app-tecnologia>
-  <app-proyectos 
-  [persona]="persona"
-  
-  ></app-proyectos>
-  <app-footer></app-footer>
-</div>
 </div>

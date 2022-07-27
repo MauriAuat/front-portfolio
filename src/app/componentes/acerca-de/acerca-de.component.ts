@@ -25,23 +25,12 @@ export class AcercaDeComponent implements OnInit {
     proyectos: [],
     tecnologias: [],
   };
-
+  @Input() permis: boolean = false;
   edit: boolean = false;
-  ulogged: string = '';
 
-  constructor(
-    private personaService: PersonaService,
-    private loginService: UsuarioService
-  ) {}
+  constructor(private personaService: PersonaService) {}
 
-  ngOnInit(): void {
-    this.ulogged = this.loginService.getLoggedUser();
-    console.log(this.ulogged);
-    this.personaService.traerPersona(1).subscribe((persona) => {
-      this.persona = persona;
-      console.log('hola');
-    });
-  }
+  ngOnInit(): void {}
 
   onEdit(): void {
     this.edit = !this.edit;

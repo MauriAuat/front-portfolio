@@ -1,7 +1,7 @@
-<div class="container-100 border border-3 componente">
+<div class="container-100 border border-3 p-3 componente">
   <div class="encabezado">
     <h4>Educacion</h4>
-    <i class="fa-solid fa-plus fa-lg"></i>
+    <i class="fa-solid fa-plus fa-lg" *ngIf="permis" routerLink="/new-edu"></i>
   </div>
   <div class="educacion-container" *ngFor="let person of persona.edus; index as i">
     <div class="educacion-container--text">
@@ -12,9 +12,9 @@
       <span>{{person.fecha_ingreso}} -</span><span> {{person.fecha_egreso}}</span>
       <hr>
     </div>
-    <div class="container--icon">
-      <i class="fa-solid fa-pen-to-square fa-lg"></i>
-      <i class="fa-solid fa-trash-can fa-lg"></i>      
+    <div class="container--icon" *ngIf="permis">
+      <i class="fa-solid fa-pen-to-square fa-lg" routerLink="/edit-edu/{{person.id_edu}}"></i>
+      <i class="fa-solid fa-trash-can fa-lg" (click)="onDelete(person.id_edu,i)"></i>      
     </div>
   </div>
 </div>

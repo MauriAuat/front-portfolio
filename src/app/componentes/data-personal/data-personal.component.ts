@@ -24,24 +24,10 @@ export class DataPersonalComponent implements OnInit {
     proyectos: [],
     tecnologias: [],
   };
-  toogle: boolean = false;
-  @Output() infoPersona = new EventEmitter<Persona>();
+  //toogle: boolean = false;
+  @Input() permis = false;
 
   constructor(private personaService: PersonaService) {}
 
-  ngOnInit(): void {
-    /*this.personaService.traerPersona(1).subscribe((persona) => {
-      console.log(persona.doms);
-      this.persona = persona;
-    });*/
-  }
-  /* editar() {
-    this.toogle = !this.toogle;
-      this.personaService.actualizarPersona(this.persona).subscribe((persona) => {
-      this.persona = persona;
-    });
-  }
-  enviarInfoPersona(persona: Persona) {
-    this.infoPersona.emit(persona);
-  }*/
+  ngOnInit(): void {}
 }

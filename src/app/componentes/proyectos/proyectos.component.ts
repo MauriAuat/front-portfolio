@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Persona } from 'src/app/modelos/persona';
+import { ProyectosService } from 'src/app/servicios/proyecto/proyectos.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -23,7 +24,19 @@ export class ProyectosComponent implements OnInit {
     proyectos: [],
     tecnologias: [],
   };
-  constructor() {}
+  @Input() permis: boolean = false;
+  constructor(private proService: ProyectosService) {}
 
   ngOnInit(): void {}
+  onDelete(id: number, index: number): void {
+    this.proService.borrarProyecto(id).subscribe(
+      (data) => {
+        this.persona.exp_laboral.splice(index, 1);
+        window.location.reload();
+      },
+      (err) => {
+        console.log(err.message);
+      }
+    );
+  }
 }

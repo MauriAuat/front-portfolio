@@ -1,3 +1,5 @@
+import { Persona } from './persona';
+
 export class Educacion {
   id_edu: number;
   fecha_egreso: string;
@@ -5,7 +7,7 @@ export class Educacion {
   logo_inst: string;
   nombre_inst: string;
   titulo: string;
-  id_pers: number;
+  persona: Persona;
 
   constructor(
     id_edu: number,
@@ -14,7 +16,7 @@ export class Educacion {
     logo_inst: string,
     nombre_inst: string,
     titulo: string,
-    id_pers: number
+    persona: Persona
   ) {
     this.id_edu = id_edu;
     this.fecha_egreso = fecha_egreso;
@@ -22,6 +24,6 @@ export class Educacion {
     this.logo_inst = logo_inst;
     this.nombre_inst = nombre_inst;
     this.titulo = titulo;
-    this.id_pers = id_pers;
+    this.persona = persona;
   }
 }

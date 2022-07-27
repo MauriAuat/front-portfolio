@@ -1,17 +1,25 @@
 <nav class="navbar navbar-dark rounded-3 mb-4">
-  <span class="nombre">Bienvenido...</span>
+ <h2>Porfolio Web</h2>
   <div class="icons">
-    <a href="#">
-      <i class="fa-brands fa-linkedin-in fa-2x icon-linkedin" >
-      </i>
+    <a href="{{persona.redSocial1}}" target="_blank">
+      <i class="fa-brands fa-linkedin-in fa-2x icon-linkedin"> </i>
     </a>
-    <a href="#">
-      <i class="fa-brands fa-github fa-2x rounded-circle icon-github"></i>   
+    <a href="{{persona.redSocial2}}" target="_blank">
+      <i class="fa-brands fa-github fa-2x rounded-circle icon-github"></i>
     </a>
-    <button class="btn btn-outline-secondary" routerLink="/" ><i class="fa-solid fa-house-chimney"></i></button> 
-    <button class="btn btn-outline-secondary" *ngIf="!isLogged" (click)="onLogOut()"> <i class="fa-solid fa-arrow-right-to-bracket"></i></button> 
-    <button class="btn btn-outline-secondary" *ngIf="isLogged"><i class="fa-solid fa-door-open"></i></button> 
-    
+    <button class="btn btn-outline-secondary" routerLink="/">
+      <i class="fa-solid fa-house-chimney"></i><h6>Inicio</h6>
+    </button>
+    <button
+      class="btn btn-outline-secondary"
+      *ngIf="!isLogged"
+      
+      routerLink="/login"
+    >
+      <i class="fa-solid fa-arrow-right-to-bracket"></i><h6>Iniciar sesión</h6>
+    </button>
+    <button class="btn btn-outline-secondary" *ngIf="isLogged" (click)="onLogOut()">
+      <i class="fa-solid fa-door-open"></i><h6>Cerrar sesión</h6>
+    </button>
   </div>
-
 </nav>

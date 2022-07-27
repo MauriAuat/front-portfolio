@@ -43,13 +43,13 @@ export class Login2Component implements OnInit {
         this.tokenService.setUserName(data.nombreUsuario);
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
-        window.location.reload();
+        this.router.navigate(['/']);
       },
       (err) => {
         this.isLogged = false;
         this.isLoginFail = true;
         this.errMsj = err.error.message;
-        console.log(this.errMsj + 'hola');
+        console.log(this.errMsj);
       }
     );
   }

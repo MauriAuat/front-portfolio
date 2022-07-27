@@ -1,21 +1,12 @@
 <div class="info-container componente">
   <div class="first-row--container">
     <img class="f-perfil rounded-circle" src="{{persona.foto}}">
-    <i class="fa-solid fa-pen-to-square fa-lg"></i>
+    <i class="fa-solid fa-pen-to-square fa-lg" *ngIf="permis" routerLink="/edit-data-pers/{{persona.id_pers}}"></i>
   </div>
-  <form #form="ngForm" *ngIf="toogle==true">
-    <input type="text">
-    <input type="text">
-    <input type="text">
-    <input type="text">
-    <input type="text">
-  </form>
-  <div class="datos-personales-column1" *ngIf="toogle==false">
-    <p>{{persona.nombre}} {{persona.apellido}}</p>
-    <!-- <p>{{persona.doms[0].direccion}}</p> -->
-    <p>{{persona.titulo}}</p>
-    <p>{{persona.resumen}}</p>
- 
+
+  <div class="datos-personales-column1">
+    <h3>{{persona.nombre}} {{persona.apellido}}</h3> 
+    <h4>{{persona.titulo}}</h4>
     <div class="logos-column2">
 
     </div>
