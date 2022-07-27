@@ -1,4 +1,21 @@
 <div class="container-footer">
-  <p>@Copyright</p>
-  <p>2022</p>
+  <div class="container-100 ">
+    <div class="encabezado">
+      <h4>Domicilios</h4>
+      <i class="fa-solid fa-plus fa-lg" routerLink="/new-domi" *ngIf="permis"></i>
+    </div>
+    <div class="experiencia-container" *ngFor="let dom of persona.doms; index as i">
+      <div class="experiencia-container--text">
+        <h5>{{dom.direccion}}</h5>
+        
+        <div class="container--icon" *ngIf="permis">
+          <i class="fa-solid fa-pen-to-square fa-lg" routerLink="/edit-domi/{{dom.id}}"></i>
+          <i class="fa-solid fa-trash-can fa-lg" (click)="onDelete(dom.id,i)"></i> 
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <h5 class="pastecopy">@Copyright</h5>
+  <h5 class="pastecopy">2022</h5>
 </div>

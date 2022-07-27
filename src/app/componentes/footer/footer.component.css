@@ -1,8 +1,32 @@
 .container-footer{
-  height: 200px;
+  height: auto;
+  box-sizing: border-box;
   background-color:#288ed6;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.experiencia-container--text{
+  display: flex;
+}
+.container--icon{
+  display:flex;
+  flex-direction: row;
+}
+.encabezado{
+  display: flex;
+  justify-content: flex-start
+}
+
+.fa-plus{
+  color: #ddd;
+  
+}
+.fa-plus:hover{
+  -webkit-box-shadow: 9px -1px 29px 8px rgba(232,232,232,0.6); 
+box-shadow: 9px -1px 29px 8px rgba(232,232,232,0.6);
+}
+.pastecopy{
+  color: #fff;
 }
