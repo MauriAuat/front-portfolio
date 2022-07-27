@@ -1,7 +1,7 @@
 <div class="container-100 border border-3 componente">
     <div class="encabezado">
         <h4>Tecnologias</h4>
-        <i class="fa-solid fa-plus fa-lg"></i>
+        <i class="fa-solid fa-plus fa-lg" *ngIf="permis" routerLink="/new-tecno"></i>
       </div>
   
 <div class="container">
@@ -21,9 +21,9 @@
        [animationDuration]="300"
        [subtitleFontSize]="'30'"
        ></circle-progress>
-          <div class="tecnologia-container--icon">
-              <i class="fa-solid fa-pen-to-square fa-lg"></i>
-              <i class="fa-solid fa-trash-can fa-lg"></i> 
+          <div class="tecnologia-container--icon" *ngIf="permis">
+              <i class="fa-solid fa-pen-to-square fa-lg"  routerLink="/edit-tecno/{{person.id_tecno}}"></i>
+              <i class="fa-solid fa-trash-can fa-lg" (click)="onDelete(person.id_tecno,i)"></i> 
           </div>
     </div>
 

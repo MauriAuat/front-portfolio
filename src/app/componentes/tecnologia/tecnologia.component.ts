@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Persona } from 'src/app/modelos/persona';
+import { TecnologiasService } from 'src/app/servicios/tecnologia/tecnologias.service';
 
 @Component({
   selector: 'app-tecnologia',
@@ -23,6 +24,7 @@ export class TecnologiaComponent implements OnInit {
     proyectos: [],
     tecnologias: [],
   };
+  @Input() permis: boolean = false;
   colorArray: string[] = [
     '#232c2e',
     '#FF6633',
@@ -76,7 +78,18 @@ export class TecnologiaComponent implements OnInit {
     '#99E6E6',
     '#6666FF',
   ];
-  constructor() {}
+  constructor(private tecnoService: TecnologiasService) {}
 
   ngOnInit(): void {}
+  onDelete(id: number, index: number): void {
+    this.tecnoService.borrarTecnologia(id).subscribe(
+      (data) => {
+        this.persona.exp_laboral.splice(index, 1);
+        window.location.reload();
+      },
+      (err) => {
+        console.log(err.message);
+      }
+    );
+  }
 }
